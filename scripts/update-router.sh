@@ -15,8 +15,9 @@ DEST="${1:-/usr/share/v2ray/custom_geosite.dat}"
 
 # Upstream repository settings
 REPO="cipher-yi/custom-geosite-blocklist"
-PRIMARY_URL="https://cdn.jsdelivr.net/gh/${REPO}@release/geosite.dat"
-FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/geosite.dat"
+URL_JSDELIVR="https://cdn.jsdelivr.net/gh/${REPO}@release/geosite.dat"
+URL_MIRROR="https://ghfast.top/https://github.com/${REPO}/releases/latest/download/geosite.dat"
+URL_DIRECT="https://github.com/${REPO}/releases/latest/download/geosite.dat"
 
 LOCK="/tmp/update-custom-geosite.lock"
 LOG="/tmp/update-custom-geosite.log"
@@ -52,13 +53,13 @@ fi
     mkdir -p "$(dirname "$DEST")"
     download_success=0
 
-    # Try Primary (jsDelivr CDN) first, then Fallback (GitHub Releases)
-    for URL in "$PRIMARY_URL" "$FALLBACK_URL"; do
-        if [ "$URL" = "$PRIMARY_URL" ]; then
-            SOURCE_TYPE="jsDelivr CDN (Primary)"
-        else
-            SOURCE_TYPE="GitHub Releases (Fallback)"
-        fi
+    # Multi-tier failover: jsDelivr CDN -> GitHub Fast Mirror -> GitHub Direct
+    for URL in "$URL_JSDELIVR" "$URL_MIRROR" "$URL_DIRECT"; do
+        case "$URL" in
+            *jsdelivr*) SOURCE_TYPE="jsDelivr CDN (Fast Primary)" ;;
+            *ghfast*)   SOURCE_TYPE="GitHub Accelerator Mirror (Secondary)" ;;
+            *)          SOURCE_TYPE="GitHub Releases Direct (Fallback)" ;;
+        esac
 
         echo "$(date '+%F %T') [TRY] Fetching from $SOURCE_TYPE: $URL"
 

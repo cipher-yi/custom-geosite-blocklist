@@ -70,7 +70,6 @@ jobs:
             - `geosite:privacy` - Global & domestic telemetry, crash logging & analytics
             - `geosite:ads` - Commercial advertising and splash screen filtering
             - `geosite:doh-bypass` - Public Encrypted DNS endpoints blocking
-            - `geosite:block-all` - Comprehensive master blocklist containing all above
             
             ### Direct Download Links:
             - **GitHub Release:** `https://github.com/${{ github.repository }}/releases/latest/download/geosite.dat`

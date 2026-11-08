@@ -64,6 +64,27 @@ def sanitize_line(raw_line: str) -> str | None:
     return None
 
 
+def prune_subdomains(domains: set[str]) -> set[str]:
+    """
+    Remove redundant subdomains if their parent domain is already present.
+    GeoSite rules default to subdomain matching, so keeping only apex/parent
+    drastically reduces file size and memory footprint without losing coverage.
+    """
+    sorted_domains = sorted(domains, key=lambda d: (d.count("."), len(d)))
+    pruned = set()
+    for d in sorted_domains:
+        parts = d.split(".")
+        redundant = False
+        for i in range(1, len(parts) - 1):
+            parent = ".".join(parts[i:])
+            if parent in pruned:
+                redundant = True
+                break
+        if not redundant:
+            pruned.add(d)
+    return pruned
+
+
 def fetch_url_with_retry(url: str, retries: int = 3, timeout: int = 25) -> str | None:
     """
     Download file content over HTTP/HTTPS with automatic retries and custom User-Agent.
@@ -168,27 +189,18 @@ def main():
                     added += 1
             print(f"    -> Extracted {added} valid domains from '{name}'")
 
-        print(f"  [SUMMARY] Total unique domains for tag '{tag}': {len(tag_domains)}")
+        pruned_domains = prune_subdomains(tag_domains)
+        print(f"  [SUMMARY] Domains for tag '{tag}': {len(tag_domains)} -> {len(pruned_domains)} after pruning")
 
         # Write tag file in V2Ray domain-list-community format
         tag_output_file = os.path.join(data_dir, tag)
         with open(tag_output_file, "w", encoding="utf-8") as out:
-            for domain in sorted(tag_domains):
+            for domain in sorted(pruned_domains):
                 out.write(f"{domain}\n")
-
-        # Aggregate into combined blocklist (excluding pure bypass tags like doh-bypass)
-        if tag != "doh-bypass":
-            all_combined_domains.update(tag_domains)
-
-    # Write overall master aggregation tag 'block-all'
-    block_all_file = os.path.join(data_dir, "block-all")
-    with open(block_all_file, "w", encoding="utf-8") as out:
-        for domain in sorted(all_combined_domains):
-            out.write(f"{domain}\n")
 
     print(f"\n==========================================")
     print(f"[*] Successfully generated GeoSite data files in: {data_dir}")
-    print(f"[*] Master 'block-all' tag contains: {len(all_combined_domains)} unique domains")
+    print(f"[*] Omitted redundant 'block-all' tag to keep binary under 20MB for jsDelivr CDN")
     print(f"==========================================")
 
 
