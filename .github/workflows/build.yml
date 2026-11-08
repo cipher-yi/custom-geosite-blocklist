@@ -27,6 +27,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: ">=1.21.0"
+          cache: false
 
       - name: Install Python Dependencies
         run: |
@@ -42,9 +43,8 @@ jobs:
           mkdir -p dist
           git clone --depth=1 https://github.com/v2fly/domain-list-community.git compiler
           cd compiler
-          go run main.go --datapath=../data --outputdir=../dist
-          cd ..
-          cd dist
+          go run main.go --datapath=../data --outputdir=../dist --outputname=geosite.dat
+          cd ../dist
           sha256sum geosite.dat > geosite.dat.sha256sum
           ls -lh geosite.dat
 
