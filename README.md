@@ -139,7 +139,9 @@ On your OpenWrt/ImmortalWrt router, add a cron job via `crontab -e` to fetch upd
 
 * [HaGeZi's DNS Blocklists](https://github.com/hagezi/dns-blocklists) - Industry-standard transparent threat intelligence and trackers.
 * [Cats-Team/AdRules](https://github.com/Cats-Team/AdRules) - China-specific HTTPDNS and PCDN detection.
-* [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) - Granular privacy categorization.
+* [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) - Granular privacy & advertising categorization.
+* [URLhaus (abuse.ch)](https://urlhaus.abuse.ch/) & [Phishing Army](https://phishing.army/) - Real-time malware and phishing feeds.
+* [LoopDns/Fuck-you-MIUI](https://github.com/LoopDns/Fuck-you-MIUI) - Xiaomi system-level cloud surveillance and promotion debloater.
 * [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community) - GeoSite compiler engine.
 
 ---

@@ -2,7 +2,7 @@
 # Organized by functional category tags for modular GeoSite generation
 
 sources:
-  # Tag: antifraud - China-specific anti-fraud, cloud scanning, and deep telemetry
+  # Tag: antifraud - China-specific anti-fraud, cloud scanning, and deep surveillance
   antifraud:
     local_rules:
       # National Anti-Fraud Platform & MIIT
@@ -79,6 +79,8 @@ sources:
         url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.mini.txt"
       - name: "URLHaus-AbuseCH"
         url: "https://urlhaus.abuse.ch/downloads/hostfile/"
+      - name: "Phishing-Army-Extended"
+        url: "https://phishing.army/download/phishing_army_blocklist_extended.txt"
 
   # Tag: pcdn - Anti-PCDN bandwidth leeching (prevents domestic video/cloud apps hijacking upload)
   pcdn:
@@ -100,13 +102,79 @@ sources:
       - name: "AdRules-HTTPDNS"
         url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/httpdns.txt"
 
-  # Tag: privacy - Global & domestic telemetry, crash analytics and device trackers
+  # Tag: privacy - Global & domestic telemetry, behavioral analytics, and device trackers
   privacy:
+    local_rules:
+      # --- Tencent Beacon & Tracing System ---
+      - "beacon.qq.com"
+      - "beaconcdn.qq.com"
+      - "oth.str.beacon.qq.com"
+      - "mqqeve.beacon.qq.com"
+      - "log.tbs.qq.com"
+      - "mtrace.qq.com"
+      - "log.tpns.tencent.com"
+
+      # --- ByteDance Snssdk & Analytics ---
+      - "log.snssdk.com"
+      - "i.snssdk.com"
+      - "ib-hl.snssdk.com"
+      - "mcs.snssdk.com"
+      - "mon.zijieapi.com"
+      - "toblog.ctobsnssdk.com"
+      - "applog.snssdk.com"
+      - "pangolin.snssdk.com"
+
+      # --- Alibaba / Umeng Telemetry & Adash ---
+      - "adashx.m.taobao.com"
+      - "adash.m.taobao.com"
+      - "h-adashx.ut.taobao.com"
+      - "umeng.com"
+      - "umengcloud.com"
+      - "log.umsns.com"
+      - "stats.umsns.com"
+      - "cnzz.com"
+      - "cnzz.net"
+      - "umini.shujupie.com"
+
+      # --- Baidu / Kuaishou / Bilibili / Meituan / Xiaohongshu / Weibo Telemetry ---
+      - "hm.baidu.com"
+      - "applog.baidu.com"
+      - "mobads-logs.baidu.com"
+      - "tongji.baidu.com"
+      - "log.kuaishou.com"
+      - "log-sdk.gifshow.com"
+      - "data.bilibili.com"
+      - "portal-portm.meituan.com"
+      - "report.meituan.com"
+      - "t-api.xiaohongshu.com"
+      - "wbapp.uve.weibo.com"
+
+      # --- Third-Party Mobile Analytics & Push Trackers ---
+      - "report.jpush.cn"
+      - "stats.jpush.cn"
+      - "s.jpush.cn"
+      - "getui.net"
+      - "ion.getui.com"
+      - "sensorsdata.cn"
+      - "growingio.com"
+      - "talkingdata.com"
+      - "talkingdata.net"
+      - "beacon.tingyun.com"
+
+      # --- CAID / CAA Cross-App Device Fingerprint Attribution ---
+      - "caid.com.cn"
+      - "adchina.com"
+      - "qzs.gdt.qq.com"
+      - "mi.gdt.qq.com"
+      - "open.e.kuaishou.com"
+      - "sigmob.cn"
     remotes:
       - name: "HaGeZi-Native-Trackers"
         url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.txt"
       - name: "Blackmatrix7-Privacy"
         url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list"
+      - name: "LoopDns-Fuck-you-MIUI"
+        url: "https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/main/hosts"
 
   # Tag: ads - Clean commercial advertisements and splash screen ads
   ads:
@@ -115,6 +183,10 @@ sources:
         url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt"
       - name: "AdRules-General-Ads"
         url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/ad.txt"
+      - name: "Blackmatrix7-Advertising"
+        url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list"
+      - name: "Blackmatrix7-Hijacking"
+        url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list"
 
   # Tag: doh-bypass - Public Encrypted DNS endpoints (prevents bypass of local proxy)
   doh-bypass:
