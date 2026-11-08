@@ -30,7 +30,6 @@ This project provides modular, transparent, and multi-category DNS-level protect
 | `geosite:privacy` | **Global & Domestic Telemetry**: Device diagnostic loggers, usage analytics, crash reporting SDKs, and behavioral trackers (Apple, Windows, Xiaomi, Huawei, etc.). |
 | `geosite:ads` | **Commercial Advertisements**: Clean commercial popups, banners, app splash screens, and tracking networks without breaking websites. |
 | `geosite:doh-bypass` | **Anti-Bypass**: Public Encrypted DNS (DoH/DoT) endpoints to prevent clients from surreptitiously bypassing router DNS enforcement. |
-| `geosite:block-all` | **Master Aggregation**: Combines all blocking categories (`antifraud`, `malware`, `pcdn`, `httpdns`, `privacy`, `ads`) into a single tag. |
 
 ---
 
@@ -120,7 +119,7 @@ rules:
 
 ## ⏰ Automated Router Updates
 
-A dedicated shell updater [`scripts/update-router.sh`](scripts/update-router.sh) is provided with **dual-source failover (jsDelivr CDN -> GitHub Releases)**, atomic lockfile management, and Protobuf format validation.
+A dedicated shell updater [`scripts/update-router.sh`](scripts/update-router.sh) is provided with **triple-tier failover (jsDelivr CDN -> GitHub Accelerator Mirror -> GitHub Releases Direct)**, atomic lockfile management, and Protobuf format validation.
 
 ### Install updater on router:
 ```bash
