@@ -1,0 +1,123 @@
+# Upstream Sources and Rule Configurations
+# Organized by functional category tags for modular GeoSite generation
+
+sources:
+  # Tag: antifraud - China-specific anti-fraud, cloud scanning, and deep telemetry
+  antifraud:
+    local_rules:
+      # National Anti-Fraud Platform & MIIT
+      - "gjfzpt.cn"
+      - "12321.cn"
+      # Cyber surveillance & digital forensics vendors (Meiya Pico, NetentSec)
+      - "meiyapico.com"
+      - "meiya.cn"
+      - "m-sec.cn"
+      - "netentsec.com"
+      - "netentsec.com.cn"
+      # ISP anti-fraud redirection and access tracking landing domains
+      - "fz.telecom.cn"
+      - "fanzha.telecom.cn"
+      - "webnotice.vnet.cn"
+      - "webblock.chinamobile.com"
+      # Antiy AVL cloud virus/anti-fraud scanning engine
+      - "avlyun.com"
+      - "antiy.cn"
+      # Xiaomi / HyperOS installation inspection, package report & security center
+      - "installer.xiaomi.com"
+      - "a0.app.xiaomi.com"
+      - "api.sec.miui.com"
+      - "sec.intl.miui.com"
+      - "adv.sec.miui.com"
+      - "flash.sec.miui.com"
+      - "data.sec.miui.com"
+      - "srv.sec.miui.com"
+      - "data.mistat.xiaomi.com"
+      - "tracking.miui.com"
+      - "sa.api.intl.miui.com"
+      - "tracking.intl.miui.com"
+      # Huawei / Honor cloud security, app inspection & SafetyDetect root checking
+      - "cloudsecurity.huawei.com"
+      - "appsecurity.huawei.com"
+      - "security.hicloud.com"
+      - "safetydetect.huawei.com"
+      - "sysdiagnose.huawei.com"
+      - "metrics.data.hicloud.com"
+      - "metrics1.data.hicloud.com"
+      - "metrics2.data.hicloud.com"
+      - "metrics-dra.dt.hicloud.com"
+      - "logservice.hicloud.com"
+      - "logservice1.hicloud.com"
+      - "logservice-dra.dt.hicloud.com"
+      # OPPO / OnePlus / vivo / OriginOS security centers & anti-fraud endpoints
+      - "api.sec.oppomobile.com"
+      - "safe.coloros.com"
+      - "security.oppomobile.com"
+      - "api-sec.coloros.com"
+      - "bdapi.coloros.com"
+      - "data.coloros.com"
+      - "bdapi-in-ads.realmemobile.com"
+      - "antifraud.vivo.com.cn"
+      - "api-sec.vivo.com.cn"
+      - "security.vivo.com.cn"
+      - "st-sdk.vivo.com.cn"
+      - "data.vivo.com.cn"
+      # 360 cloud URL browsing history telemetry
+      - "securl.cloud.360.cn"
+      - "cloud.safe.360.cn"
+      - "sec.so.com"
+      # Commercial device fingerprinting & behavioral risk management SDKs
+      - "shumeidata.com"
+      - "shumex.com"
+      - "tongdun.net"
+      - "tongdun.cn"
+      - "dingxiang-inc.com"
+
+  # Tag: malware - Threat intelligence, malicious command & control, phishing
+  malware:
+    remotes:
+      - name: "HaGeZi-TIF-Mini"
+        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.mini.txt"
+      - name: "URLHaus-AbuseCH"
+        url: "https://urlhaus.abuse.ch/downloads/hostfile/"
+
+  # Tag: pcdn - Anti-PCDN bandwidth leeching (prevents domestic video/cloud apps hijacking upload)
+  pcdn:
+    remotes:
+      - name: "AdRules-PCDN"
+        url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/pcdn.txt"
+
+  # Tag: httpdns - Blocks HTTPDNS endpoints to force clients back to local DNS
+  httpdns:
+    local_rules:
+      - "httpdns.volces.com"
+      - "httpdns.alicdn.com"
+      - "dns.qq.com"
+      - "httpdns.n.netease.com"
+      - "httpdns.baidubce.com"
+      - "httpdns.kuaishou.com"
+      - "httpdns.meituan.com"
+    remotes:
+      - name: "AdRules-HTTPDNS"
+        url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/httpdns.txt"
+
+  # Tag: privacy - Global & domestic telemetry, crash analytics and device trackers
+  privacy:
+    remotes:
+      - name: "HaGeZi-Native-Trackers"
+        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.txt"
+      - name: "Blackmatrix7-Privacy"
+        url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list"
+
+  # Tag: ads - Clean commercial advertisements and splash screen ads
+  ads:
+    remotes:
+      - name: "HaGeZi-Multi-Light"
+        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt"
+      - name: "AdRules-General-Ads"
+        url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/ad.txt"
+
+  # Tag: doh_bypass - Public Encrypted DNS endpoints (prevents bypass of local proxy)
+  doh_bypass:
+    remotes:
+      - name: "HaGeZi-DoH-Bypass"
+        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/doh-vpn-proxy-bypass.txt"

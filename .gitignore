@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+
+# Build artifacts
+data/
+dist/
+compiler/
+*.dat
+*.sha256sum
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

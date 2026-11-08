@@ -1,0 +1,10 @@
+# User-defined domain whitelist
+# Domains listed here will be excluded from all block categories during compilation.
+# Supports full domain or domain suffix.
+
+# Examples:
+# apple.com
+# icloud.com
+# live.com
+# office.com
+# bilibili.com
