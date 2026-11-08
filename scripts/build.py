@@ -176,8 +176,8 @@ def main():
             for domain in sorted(tag_domains):
                 out.write(f"{domain}\n")
 
-        # Aggregate into combined blocklist (excluding pure bypass tags like doh_bypass)
-        if tag != "doh_bypass":
+        # Aggregate into combined blocklist (excluding pure bypass tags like doh-bypass)
+        if tag != "doh-bypass":
             all_combined_domains.update(tag_domains)
 
     # Write overall master aggregation tag 'block-all'

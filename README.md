@@ -29,7 +29,7 @@ This project provides modular, transparent, and multi-category DNS-level protect
 | `geosite:httpdns` | **Anti-HTTPDNS Bypass**: Blocks major domestic HTTPDNS endpoints (Tencent, Alibaba, ByteDance, NetEase) to force mobile apps back to local DNS inspection. |
 | `geosite:privacy` | **Global & Domestic Telemetry**: Device diagnostic loggers, usage analytics, crash reporting SDKs, and behavioral trackers (Apple, Windows, Xiaomi, Huawei, etc.). |
 | `geosite:ads` | **Commercial Advertisements**: Clean commercial popups, banners, app splash screens, and tracking networks without breaking websites. |
-| `geosite:doh_bypass` | **Anti-Bypass**: Public Encrypted DNS (DoH/DoT) endpoints to prevent clients from surreptitiously bypassing router DNS enforcement. |
+| `geosite:doh-bypass` | **Anti-Bypass**: Public Encrypted DNS (DoH/DoT) endpoints to prevent clients from surreptitiously bypassing router DNS enforcement. |
 | `geosite:block-all` | **Master Aggregation**: Combines all blocking categories (`antifraud`, `malware`, `pcdn`, `httpdns`, `privacy`, `ads`) into a single tag. |
 
 ---

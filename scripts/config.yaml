@@ -116,8 +116,8 @@ sources:
       - name: "AdRules-General-Ads"
         url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/ad.txt"
 
-  # Tag: doh_bypass - Public Encrypted DNS endpoints (prevents bypass of local proxy)
-  doh_bypass:
+  # Tag: doh-bypass - Public Encrypted DNS endpoints (prevents bypass of local proxy)
+  doh-bypass:
     remotes:
       - name: "HaGeZi-DoH-Bypass"
         url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/doh-vpn-proxy-bypass.txt"

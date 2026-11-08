@@ -63,7 +63,7 @@ jobs:
             - `geosite:httpdns` - HTTPDNS endpoint blocking to enforce local DNS
             - `geosite:privacy` - Global & domestic telemetry, crash logging & analytics
             - `geosite:ads` - Commercial advertising and splash screen filtering
-            - `geosite:doh_bypass` - Public Encrypted DNS endpoints blocking
+            - `geosite:doh-bypass` - Public Encrypted DNS endpoints blocking
             - `geosite:block-all` - Comprehensive master blocklist containing all above
             
             ### Direct Download Links:
