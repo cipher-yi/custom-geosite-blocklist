@@ -1,6 +1,6 @@
 # Custom GeoSite Blocklist
 
-[![Build and Release GeoSite Blocklist](https://github.com/USER_OR_ORG/REPO_NAME/actions/workflows/build.yml/badge.svg)](https://github.com/USER_OR_ORG/REPO_NAME/actions/workflows/build.yml)
+[![Build and Release GeoSite Blocklist](https://github.com/cipher-yi/custom-geosite-blocklist/actions/workflows/build.yml/badge.svg)](https://github.com/cipher-yi/custom-geosite-blocklist/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An automated, unadulterated, and high-performance **GeoSite** binary blocklist compiled specifically for **KixDNS**, **V2Ray**, **Xray**, **sing-box**, and **Clash/Mihomo**.
@@ -36,9 +36,9 @@ This project provides modular, transparent, and multi-category DNS-level protect
 
 ## 📥 Direct Download Links
 
-* **Latest Release:** `https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/releases/latest/download/geosite.dat`
-* **Fast jsDelivr CDN:** `https://cdn.jsdelivr.net/gh/<YOUR_USERNAME>/<YOUR_REPO>@release/geosite.dat`
-* **SHA256 Checksum:** `https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/releases/latest/download/geosite.dat.sha256sum`
+* **Latest Release:** `https://github.com/cipher-yi/custom-geosite-blocklist/releases/latest/download/geosite.dat`
+* **Fast jsDelivr CDN:** `https://cdn.jsdelivr.net/gh/cipher-yi/custom-geosite-blocklist@release/geosite.dat`
+* **SHA256 Checksum:** `https://github.com/cipher-yi/custom-geosite-blocklist/releases/latest/download/geosite.dat.sha256sum`
 
 ---
 
@@ -107,7 +107,7 @@ In your `config.yaml`:
 ```yaml
 geodata-mode: true
 geox-url:
-  geosite: "https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/releases/latest/download/geosite.dat"
+  geosite: "https://github.com/cipher-yi/custom-geosite-blocklist/releases/latest/download/geosite.dat"
 
 rules:
   - GEOSITE,antifraud,REJECT
@@ -123,7 +123,7 @@ rules:
 On your OpenWrt/ImmortalWrt router, add a cron job via `crontab -e` to fetch updates every Monday at 04:00 AM:
 
 ```bash
-0 4 * * 1 curl -fsSL https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/releases/latest/download/geosite.dat -o /etc/kixdns/custom_geosite.dat
+0 4 * * 1 curl -fsSL https://github.com/cipher-yi/custom-geosite-blocklist/releases/latest/download/geosite.dat -o /etc/kixdns/custom_geosite.dat
 ```
 
 ---
