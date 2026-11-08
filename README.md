@@ -23,6 +23,7 @@ This project provides modular, transparent, and multi-category DNS-level protect
 
 | GeoSite Tag | Description & Coverage |
 | :--- | :--- |
+| `geosite:carrier-gateway` | **Carrier Silent Auth & Gateways**: China Mobile, Telecom, and Unicom one-click passwordless login and cellular MSISDN query gateways (`cmpassport.com`, `id6.me`, `wostore.cn`, etc.). Separated independently so users can choose between strict cellular anti-tracking vs. domestic app one-click login convenience. |
 | `geosite:antifraud` | **China Specific**: National Anti-Fraud app probes, Antiy AVL cloud virus inspection, Xiaomi / Huawei / OPPO / vivo installation censorship, device fingerprinting (Shumei / Tongdun / Dingxiang), and ISP anti-fraud redirection pages. |
 | `geosite:malware` | **Global Threat Intel**: Active malware delivery servers, ransomware C2 nodes, credential harvesters, and phishing domains (via HaGeZi TIF & URLHaus). |
 | `geosite:pcdn` | **Anti-PCDN Leeching**: Domestic video streaming services (iQiyi, Youku, Tencent Video, Baidu Wangpan) leeching residential home upload bandwidth. |

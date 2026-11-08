@@ -63,6 +63,7 @@ jobs:
             Automated Daily Build (${{ github.sha }})
             
             ### Included GeoSite Categories:
+            - `geosite:carrier-gateway` - China carrier silent MSISDN query & one-click passwordless login gateways
             - `geosite:antifraud` - China-specific anti-fraud, cloud scanning & security inspection
             - `geosite:malware` - Threat intelligence, malicious URLs, phishing & botnets
             - `geosite:pcdn` - Anti-PCDN bandwidth leeching protection

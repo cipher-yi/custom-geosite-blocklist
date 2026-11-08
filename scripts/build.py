@@ -152,7 +152,7 @@ def main():
     os.makedirs(data_dir, exist_ok=True)
 
     sources = config.get("sources", {})
-    all_combined_domains: set[str] = set()
+    tag_domain_map: dict[str, set[str]] = {}
 
     for tag, conf in sources.items():
         print(f"\n[+] Processing tag: '{tag}'")
@@ -189,8 +189,33 @@ def main():
                     added += 1
             print(f"    -> Extracted {added} valid domains from '{name}'")
 
-        pruned_domains = prune_subdomains(tag_domains)
-        print(f"  [SUMMARY] Domains for tag '{tag}': {len(tag_domains)} -> {len(pruned_domains)} after pruning")
+        tag_domain_map[tag] = tag_domains
+
+    # Ensure clean separation between 'carrier-gateway' and other tags (like 'privacy')
+    # If a domain is assigned to carrier-gateway, purge it from privacy so users can toggle carrier-gateway independently
+    if "carrier-gateway" in tag_domain_map and "privacy" in tag_domain_map:
+        carrier_parents = tag_domain_map["carrier-gateway"]
+        pruned_privacy = set()
+        for d in tag_domain_map["privacy"]:
+            parts = d.split(".")
+            is_carrier = False
+            for i in range(len(parts) - 1):
+                suffix = ".".join(parts[i:])
+                if suffix in carrier_parents:
+                    is_carrier = True
+                    break
+            if not is_carrier:
+                pruned_privacy.add(d)
+
+        removed_count = len(tag_domain_map["privacy"]) - len(pruned_privacy)
+        if removed_count > 0:
+            print(f"\n[*] Isolated {removed_count} carrier-gateway domains from tag 'privacy' into dedicated tag")
+            tag_domain_map["privacy"] = pruned_privacy
+
+    # Prune subdomains and serialize to disk
+    for tag, domains in tag_domain_map.items():
+        pruned_domains = prune_subdomains(domains)
+        print(f"  [SUMMARY] Domains for tag '{tag}': {len(domains)} -> {len(pruned_domains)} after pruning")
 
         # Write tag file in V2Ray domain-list-community format
         tag_output_file = os.path.join(data_dir, tag)

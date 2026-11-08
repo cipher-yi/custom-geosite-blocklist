@@ -2,6 +2,22 @@
 # Organized by functional category tags for modular GeoSite generation
 
 sources:
+  # Tag: carrier-gateway - China carrier silent MSISDN query & one-click passwordless login gateways
+  carrier-gateway:
+    local_rules:
+      # China Mobile (和飞信 / 统一认证 / 互联网能力开放平台)
+      - "cmpassport.com"
+      # China Telecom (天翼账号 / 开放平台)
+      - "id6.me"
+      - "open.e.189.cn"
+      - "id.189.cn"
+      # China Unicom (沃账户 / 沃商城 / 统一认证 / 能力开放)
+      - "wostore.cn"
+      - "wosms.cn"
+      - "hm.wo.cn"
+      - "mdn.open.wo.cn"
+      - "nisportal.10010.com"
+
   # Tag: antifraud - China-specific anti-fraud, cloud scanning, and deep surveillance
   antifraud:
     local_rules:
