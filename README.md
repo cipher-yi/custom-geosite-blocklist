@@ -118,12 +118,27 @@ rules:
 
 ---
 
-## ⏰ Automated Router Updates (Cron)
+## ⏰ Automated Router Updates
 
-On your OpenWrt/ImmortalWrt router, add a cron job via `crontab -e` to fetch updates every Monday at 04:00 AM:
+A dedicated shell updater [`scripts/update-router.sh`](scripts/update-router.sh) is provided with **dual-source failover (jsDelivr CDN -> GitHub Releases)**, atomic lockfile management, and Protobuf format validation.
 
+### Install updater on router:
 ```bash
-0 4 * * 1 curl -fsSL https://github.com/cipher-yi/custom-geosite-blocklist/releases/latest/download/geosite.dat -o /etc/kixdns/custom_geosite.dat
+curl -fsSL https://raw.githubusercontent.com/cipher-yi/custom-geosite-blocklist/main/scripts/update-router.sh -o /usr/bin/update-custom-geosite
+chmod +x /usr/bin/update-custom-geosite
+```
+
+### Manual Trigger:
+```bash
+update-custom-geosite
+# Check logs:
+cat /tmp/update-custom-geosite.log
+```
+
+### Setup Cron Schedule:
+Add a cron job via `crontab -e` to auto-update every Monday at 04:00 AM:
+```bash
+0 4 * * 1 /usr/bin/update-custom-geosite
 ```
 
 ---
