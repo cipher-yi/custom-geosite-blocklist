@@ -142,6 +142,7 @@ On your OpenWrt/ImmortalWrt router, add a cron job via `crontab -e` to fetch upd
 * [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) - Granular privacy & advertising categorization.
 * [URLhaus (abuse.ch)](https://urlhaus.abuse.ch/) & [Phishing Army](https://phishing.army/) - Real-time malware and phishing feeds.
 * [LoopDns/Fuck-you-MIUI](https://github.com/LoopDns/Fuck-you-MIUI) - Xiaomi system-level cloud surveillance and promotion debloater.
+* [arnold117/iOS-NOIR](https://github.com/arnold117/iOS-NOIR) - Low-level forensic telemetry & privacy shield for domestic apps.
 * [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community) - GeoSite compiler engine.
 
 ---

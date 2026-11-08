@@ -175,6 +175,8 @@ sources:
         url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list"
       - name: "LoopDns-Fuck-you-MIUI"
         url: "https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/main/hosts"
+      - name: "iOS-NOIR-Privacy-Shield"
+        url: "https://raw.githubusercontent.com/arnold117/iOS-NOIR/main/shields/ios_noir_shield.conf"
 
   # Tag: ads - Clean commercial advertisements and splash screen ads
   ads:
