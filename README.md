@@ -53,7 +53,7 @@ In your `/etc/kixdns/pipeline.json`:
   "settings": {
     "geosite_data_paths": [
       "/usr/share/v2ray/geosite.dat",
-      "/etc/kixdns/custom_geosite.dat"
+      "/usr/share/v2ray/custom_geosite.dat"
     ]
   },
   "pipeline_select": [
@@ -70,7 +70,7 @@ In your `/etc/kixdns/pipeline.json`:
 }
 ```
 
-> **Tip**: KixDNS features an active file watcher. Whenever `/etc/kixdns/custom_geosite.dat` is downloaded and replaced, KixDNS immediately hot-reloads with zero downtime.
+> **Tip**: KixDNS features an active file watcher. Whenever `/usr/share/v2ray/custom_geosite.dat` is downloaded and replaced, KixDNS immediately hot-reloads with zero downtime.
 
 ---
 

@@ -11,7 +11,7 @@
 # ==============================================================================
 
 # Target destination file on the router
-DEST="${1:-/etc/kixdns/my_blocklist.dat}"
+DEST="${1:-/usr/share/v2ray/custom_geosite.dat}"
 
 # Upstream repository settings
 REPO="cipher-yi/custom-geosite-blocklist"
