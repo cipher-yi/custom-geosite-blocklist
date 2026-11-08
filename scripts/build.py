@@ -31,7 +31,7 @@ def sanitize_line(raw_line: str) -> str | None:
     - Surge / QuantumultX style: HOST-SUFFIX,example.com,REJECT
     """
     line = raw_line.strip()
-    if not line or line.startswith(("#", "!", ";", "//")):
+    if not line or line.startswith(("#", "!", ";", "//", "[")):
         return None
 
     # Handle QuantumultX / Surge rule syntax (HOST,domain.com,REJECT)
