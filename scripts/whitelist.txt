@@ -2,9 +2,62 @@
 # Domains listed here will be excluded from all block categories during compilation.
 # Supports full domain or domain suffix.
 
-# Examples:
-# apple.com
-# icloud.com
-# live.com
-# office.com
-# bilibili.com
+# --- Specific Whitelist ---
+standwithjensen.com
+
+# --- Public Cloud, Edge & Developer Platforms ---
+edgeone.dev
+volces.com
+volcengine.com
+vercel.app
+pages.dev
+workers.dev
+netlify.app
+supabase.co
+github.com
+github.io
+githubassets.com
+githubusercontent.com
+gitlab.com
+docker.com
+docker.io
+pypi.org
+npmjs.org
+python.org
+rust-lang.org
+golang.org
+
+# --- Major Infrastructure, CDN & Public DNS ---
+cloudflare.com
+cloudflare-dns.com
+fastly.net
+akamai.com
+akamaized.net
+cloudfront.net
+aws.amazon.com
+amazon.com
+apple.com
+icloud.com
+microsoft.com
+office.com
+windowsupdate.com
+live.com
+google.com
+googleapis.com
+gstatic.com
+android.com
+
+# --- Gaming & Store Platforms ---
+steampowered.com
+steamcommunity.com
+steamstatic.com
+steamserver.net
+epicgames.com
+blizzard.com
+ea.com
+playstation.net
+playstation.com
+nintendo.net
+nintendo.com
+xboxlive.com
+bilibili.com

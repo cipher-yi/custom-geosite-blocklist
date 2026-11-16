@@ -88,15 +88,13 @@ sources:
       - "tongdun.cn"
       - "dingxiang-inc.com"
 
-  # Tag: malware - Threat intelligence, malicious command & control, phishing
+  # Tag: malware - Threat intelligence, malicious command & control, phishing (High-confidence, clean feeds)
   malware:
     remotes:
-      - name: "HaGeZi-TIF-Mini"
-        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.mini.txt"
+      - name: "HaGeZi-TIF-Standard"
+        url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt"
       - name: "URLHaus-AbuseCH"
         url: "https://urlhaus.abuse.ch/downloads/hostfile/"
-      - name: "Phishing-Army-Extended"
-        url: "https://phishing.army/download/phishing_army_blocklist_extended.txt"
 
   # Tag: pcdn - Anti-PCDN bandwidth leeching (prevents domestic video/cloud apps hijacking upload)
   pcdn:
@@ -194,13 +192,11 @@ sources:
       - name: "iOS-NOIR-Privacy-Shield"
         url: "https://raw.githubusercontent.com/arnold117/iOS-NOIR/main/shields/ios_noir_shield.conf"
 
-  # Tag: ads - Clean commercial advertisements and splash screen ads
+  # Tag: ads - Clean commercial advertisements and splash screen ads (Zero false positive curated)
   ads:
     remotes:
       - name: "HaGeZi-Multi-Light"
         url: "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt"
-      - name: "AdRules-General-Ads"
-        url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/ad.txt"
       - name: "Blackmatrix7-Advertising"
         url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list"
       - name: "Blackmatrix7-Hijacking"
